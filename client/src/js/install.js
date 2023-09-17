@@ -29,6 +29,8 @@ const handleInstallClick = async () => {
 //handles when app is installed and sets deferredPrompt back to null
 const handleAppInstalled = () => {
     deferredPrompt = null;
+
+    butInstall.classList.add("hidden");
 };
 // TODO: Add an handler for the `appinstalled` event
 //Event listeners
