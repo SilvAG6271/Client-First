@@ -30,7 +30,7 @@ const handleInstallClick = async () => {
 const handleAppInstalled = () => {
     deferredPrompt = null;
 
-    
+    butInstall.classList.add("hidden");
 };
 // TODO: Add an handler for the `appinstalled` event
 //Event listeners
