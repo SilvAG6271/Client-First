@@ -43,7 +43,24 @@ registerRoute(({ request }) => ['style', 'script', 'worker' ]. includes(request.
   ]
  })
 );
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('error-cache').then((cache) => {
+      return cache.addAll(['/error.html']); // Add an error page to the cache
+    })
+  );
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
+});
+
+
 // TODO: Implement asset caching
 //CacheableResponsePlugin
 
-registerRoute();
