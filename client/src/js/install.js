@@ -10,7 +10,7 @@ let deferredPrompt = null;
 const handleBeforeInstallPrompt = (event) => {
     deferredPrompt = event;
 
-    butInstall.classList.remove("hidden");
+    butInstall.classList.toggle("hidden");
 };
 
 //function to handle the click of the install button 
@@ -22,7 +22,7 @@ const handleInstallClick = async () => {
 
         deferredPrompt = null;
 
-        butInstall.classList.add("hidden");
+        butInstall.classList.toggle("hidden");
     }
 
 };
