@@ -21,10 +21,10 @@ Please install node.js
   
 ## Usage 
 This app will allow the user write code and save it even when offline
-![picture of terminal questions and index.js ](media/LogoIndex.png)
-![picture of jest test for Shape ](media/ShapeTest.png)
-![picture of Shape.js ](media/Shape.png)
-![](media\LogoBuildUpdated.gif)
+![picture of J.A.T.E while installed and offline ](media/offlineJATE.png)
+![picture of the activated service worker for J.A.T.E. ](media/JATEActivatedSW.png)
+![picture of J.A.T.E. on Heroku ](media/JATEHeroku.png)
+![](media\J.A.T.E..gif)
 
 
 
