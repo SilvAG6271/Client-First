@@ -24,14 +24,14 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'sw.js'
+        swDest: 'service-worker.js'
        }),
       new WebpackPwaManifest({
           name: "Just Another Text Editor",
           short_name: "J.A.T.E.",
           orientation: "portrait",
           display: "standalone",
-          start_url: "/",
+          start_url: ".",
           publicPath: "/",
           description: "Runs a text editor",
           background_color: "#7eb4e2",

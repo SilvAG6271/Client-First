@@ -30,34 +30,25 @@ offlineFallback({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-registerRoute(({ request }) => ['style', 'script', 'worker' ]. includes(request.destination),
+registerRoute(({ request }) => ['style', 'script', 'worker' ].includes(request.destination),
  new StaleWhileRevalidate({
-  cacheName: 'assets-cache',
+  cacheName: 'asset-cache',
   plugins: [
     new CacheableResponsePlugin({
       statuses: [0, 200],
     }),
-    new ExpirationPlugin({
-      maxAgeSeconds: 12 * 60 * 60,
-    })
   ]
  })
 );
 
+const serviceWorkerScope = '/';
+
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open('error-cache').then((cache) => {
-      return cache.addAll(['/error.html']); // Add an error page to the cache
-    })
-  );
+  console.log('service worker has been installed');
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener('activate', (event) => {
+  console.log('service worker is now controlling the scope:', serviceWorkerScope);
 });
 
 
