@@ -24,12 +24,10 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-offlineFallback({
-  strategy: pageCache,
-});
-
+//registers a service worker that catches navigaton requests
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
+//registers a service worker route that caches assets styles, scripts and workers
 registerRoute(({ request }) => ['style', 'script', 'worker' ].includes(request.destination),
  new StaleWhileRevalidate({
   cacheName: 'asset-cache',
@@ -41,17 +39,15 @@ registerRoute(({ request }) => ['style', 'script', 'worker' ].includes(request.d
  })
 );
 
-const serviceWorkerScope = '/';
+//add listeners to check if service worker is being installed and activated
 
 self.addEventListener('install', (event) => {
   console.log('service worker has been installed');
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('service worker is now controlling the scope:', serviceWorkerScope);
+  console.log('service worker has been activated');
 });
 
 
-// TODO: Implement asset caching
-//CacheableResponsePlugin
 

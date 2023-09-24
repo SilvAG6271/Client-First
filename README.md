@@ -29,7 +29,7 @@ This app will allow the user write code and save it even when offline
 
 
 ## Credits
-I did receive some help from user  
+Source code is from github https://github.com/coding-boot-camp/cautious-meme. We did a significant portion of the homework during class time, most if not all of the code in Index.js, src-sw.js, webpack.config.js and database.js are from class examples as well as Eli, the instructor. The code logic in install.js was borrowed from Eric Beverly from class, his github is https://github.com/esbev
 
 
 ## License 
