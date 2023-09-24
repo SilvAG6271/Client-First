@@ -24,7 +24,7 @@ This app will allow the user write code and save it even when offline
 ![picture of J.A.T.E while installed and offline ](media/offlineJATE.png)
 ![picture of the activated service worker for J.A.T.E. ](media/JATEActivatedSW.png)
 ![picture of J.A.T.E. on Heroku ](media/JATEHeroku.png)
-![](media/J.A.T.E..gif)
+![](media/JATE.gif)
 
 
 
